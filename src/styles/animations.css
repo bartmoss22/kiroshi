@@ -1,0 +1,31 @@
+.auto-scroll-wait {
+    position: relative;
+    overflow: hidden;
+    height: 100px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.auto-scroll-wait::-webkit-scrollbar {
+    display: none;
+}
+
+.auto-scroll-wait>* {
+    display: block;
+    will-change: transform;
+    animation: scroll-wait var(--scroll-duration, 5s) linear infinite;
+}
+
+@keyframes scroll-wait {
+    0%,
+    15% {
+        transform: translateY(0);
+    }
+    80%,
+    90% {
+        transform: translateY(var(--scroll-distance, -100%));
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

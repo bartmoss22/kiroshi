@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@import './styles/overrides.css';
+@import './styles/animations.css';
+
+body {
+    color: white;
+    background-color: black;
+    font-family: "Geist Mono";
+}
+
+.material-symbols-sharp {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    font-family: 'Material Symbols Sharp';
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    font-size: 24px;
+}

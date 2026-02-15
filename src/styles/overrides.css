@@ -1,0 +1,19 @@
+input {
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: black;
+}
+
+*:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none white !important;
+}
+
+*:focus-visible {
+    outline: none !important;
+    border: none !important;
+    box-shadow: 0 0 0 1px white !important;
+    -webkit-box-shadow: 0 0 0 1px white !important;
+}
