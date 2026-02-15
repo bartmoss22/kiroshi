@@ -491,6 +491,29 @@
     });
 </script>
 
+<style>
+    #video-player :global(.ASS-box) {
+        transition: transform 300ms ease-in-out;
+        transform: translateY(0);
+    }
+
+    #video-player.controls-visible :global(.ASS-box) {
+        transform: translateY(-120px) !important;
+    }
+
+    #video-player :global(.ASS-box > div),
+    #video-player :global(.ASS-box span) {
+        font-family: 'Geist Mono', system-ui, sans-serif !important;
+        font-weight: 600 !important;
+        color: white !important;
+        
+        text-shadow: 
+            0px 0px 4px rgba(0,0,0,0.8),
+            2px 2px 0px rgba(0,0,0,0.5)
+            !important;
+    }
+</style>
+
 <svelte:window onkeydown={handleKeyDown} onkeyup={handleKeyUp} />
 
 <div class="relative flex min-h-screen flex-col">
@@ -665,6 +688,7 @@
         <div
             id="video-player"
             class="absolute top-0 left-0 h-full w-full bg-black"
+            class:controls-visible={controlsVisible}
             bind:this={playerContainer}
             onclick={togglePlay}
             ondblclick={toggleFullscreen}
