@@ -30,14 +30,14 @@ No official Docker image has been built yet. To deploy, follow these steps:
 
 ## TODO
 
-- [] Build and deploy github docker image
-- [] Add better documentation
-- [] Add testing
-- [] Add autoplay
-- [] Auto-select source, provide a way to select a different source on demand
-- [] Set up DB for account management
-- [] Track playback progress in account
-- [] Suggest movies/shows on search page
+- [ ] Build and deploy github docker image
+- [ ] Add better documentation
+- [ ] Add testing
+- [ ] Add autoplay
+- [ ] Auto-select source, provide a way to select a different source on demand
+- [ ] Set up DB for account management
+- [ ] Track playback progress in account
+- [ ] Suggest movies/shows on search page
 
 ## Legal Disclaimer
 
