@@ -1,28 +1,21 @@
-node_modules
+# Frontend
+frontend/node_modules/
+frontend/.svelte-kit/
+frontend/build/
+frontend/static/
 
-# Output
-.output
-.vercel
-.netlify
-.wrangler
-/.svelte-kit
-/build
-
-# OS
-.DS_Store
-Thumbs.db
+# Backend
+backend/public/
+downloads/
 
 # Env
 .env
 .env.*
 !.env.example
-!.env.test
 
-# Vite
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
+# OS
+.DS_Store
+Thumbs.db
 
-# Generated
-cache
-downloads
-static
+# Go
+*.exe
