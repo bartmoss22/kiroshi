@@ -12,6 +12,10 @@ An automated real-time torrent streaming service. Utilizes [webtorrent](https://
 
 - Play anywhere: thanks to the awesome [libmedia/avplayer](https://github.com/zhaohappy/libmedia) library, virtually any video file is playable in most browsers including multiple audio/subtitle track support
 
+## Known issues
+
+- [] Mounting /app/downloads to a CIFS network drive may cause issues in file seeking. Use SSHFS instead.
+
 ## Deploying
 
 No official Docker image has been built yet. To deploy, follow these steps:
@@ -30,6 +34,7 @@ No official Docker image has been built yet. To deploy, follow these steps:
 
 ## TODO
 
+- [x] Migrate backend to Go
 - [ ] Build and deploy github docker image
 - [ ] Add better documentation
 - [ ] Add testing
