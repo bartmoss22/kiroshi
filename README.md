@@ -1,5 +1,7 @@
 # Kiroshi Media Server
 
+![Player View](docs/images/player.jpg)
+
 ## About
 
 An automated real-time torrent streaming service. Utilizes [webtorrent](https://github.com/webtorrent/webtorrent) on the backend to allow byte-range requests to video torrents and [libmedia/avplayer](https://github.com/zhaohappy/libmedia) on the frontend to play basically any container or codec in the browser without the need for server-side transmuxing/transcoding. This has several advantages over existing solutions:
@@ -43,6 +45,7 @@ No official Docker image has been built yet. To deploy, follow these steps:
 - [ ] Set up DB for account management
 - [ ] Track playback progress in account
 - [ ] Suggest movies/shows on search page
+- [ ] Improve logging
 
 ## Legal Disclaimer
 
