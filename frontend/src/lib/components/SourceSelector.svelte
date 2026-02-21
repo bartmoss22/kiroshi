@@ -3,7 +3,8 @@
         displayName: string;
         resolution: number;
         seeders: number;
-        sourceUrl: string;
+        guid: string;
+        link: string;
         fileName: string;
         imdbId: string;
     }

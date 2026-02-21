@@ -40,7 +40,8 @@
                     displayName: item.title || item.fileName,
                     resolution: item.resolution,
                     seeders: item.seeders,
-                    sourceUrl: item.link,
+                    guid: item.guid,
+                    link: item.link,
                     fileName: item.fileName,
                     imdbId: item.imdbId || mediaInfo.imdbId
                 };
@@ -71,13 +72,14 @@
         errorMessage = '';
 
         try {
-            const sourceUrl = sourceItem.sourceUrl;
+            const guid = sourceItem.guid;
+            const link = sourceItem.link;
             const season = mediaInfo.mediaType === 'episode' ? mediaInfo.season : undefined;
             const episode = mediaInfo.mediaType === 'episode' ? mediaInfo.episode : undefined;
             const streamResponse = await fetch('/api/torrent', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ sourceUrl, season, episode })
+                body: JSON.stringify({ guid, link, season, episode })
             });
 
             if (!streamResponse.ok) {

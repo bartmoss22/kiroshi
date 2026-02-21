@@ -36,9 +36,10 @@ var (
 )
 
 type addTorrentRequest struct {
-	SourceUrl string `json:"sourceUrl"`
-	Season    int    `json:"season,omitempty"`
-	Episode   int    `json:"episode,omitempty"`
+	Guid    string `json:"guid"`
+	Link    string `json:"link"`
+	Season  int    `json:"season,omitempty"`
+	Episode int    `json:"episode,omitempty"`
 }
 
 type streamResponse struct {
@@ -80,11 +81,20 @@ func handleAddTorrent(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	log.Printf("[torrent] Add request: %s (S:%d E:%d)", req.SourceUrl, req.Season, req.Episode)
+	log.Printf("[torrent] Add request: guid: %s, link: %s (S:%d E:%d)", req.Guid, req.Link, req.Season, req.Episode)
 
-	t, err := resolveAndAdd(req.SourceUrl)
+	var t *torrent.Torrent
+	var err error
+
+	for _, source := range []string{req.Guid, req.Link} {
+		t, err = resolveAndAdd(source)
+		if err == nil {
+			break
+		}
+		log.Printf("[torrent] Failed to add %s: %v", source, err)
+	}
+
 	if err != nil {
-		log.Printf("[torrent] Failed to add: %v", err)
 		http.Error(w, "Failed to resolve source: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
