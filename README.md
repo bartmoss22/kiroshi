@@ -14,7 +14,7 @@ An automated real-time torrent streaming service. Utilizes [webtorrent](https://
 
 ## Known issues
 
-- [] Mounting /app/downloads to a CIFS network drive may cause issues in file seeking. Use SSHFS instead.
+* **CIFS Network Drives:** Mounting `/app/downloads` to a CIFS drive may cause issues with file seeking. It is recommended to use **SSHFS** instead for better stability.
 
 ## Deploying
 
