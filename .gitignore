@@ -5,7 +5,8 @@ frontend/build/
 frontend/static/
 
 # Backend
-backend/public/
+backend/public/*
+!backend/public/.gitkeep
 downloads/
 
 # Env
